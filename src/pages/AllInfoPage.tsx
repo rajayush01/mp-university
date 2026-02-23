@@ -140,7 +140,7 @@ const AllInfoPage: React.FC = () => {
                 </div>
 
                 {/* Item List */}
-                <div className="divide-y" style={{ divideColor: '#f5f5f5' }}>
+                <div className="divide-y divide-gray-100">
                   {currentData.map((item, index) => {
                     const itemKey = `${selectedSection}-${item.id}`;
                     return (

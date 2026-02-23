@@ -85,7 +85,7 @@ const EventsSection: React.FC = () => {
                 </div>
 
                 {/* Scrollable List */}
-                <ul className="flex-1 divide-y overflow-y-auto scrollbar-mono" style={{ divideColor: '#f5f5f5' }}>
+                <ul className="flex-1 divide-y divide-gray-100 overflow-y-auto scrollbar-mono">
                   {dept.items.map((item, index) => {
                     const itemKey = `${key}-${index}`;
                     return (
