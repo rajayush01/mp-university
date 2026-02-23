@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import dpslogo from "../../assets/logo_bhoj.png";
+import dpslogo from "../../assets/logo_main.png";
 
 
 type SizeType = 'sm' | 'md' | 'lg';
@@ -130,7 +130,7 @@ const DPSLoading: React.FC<DPSLoadingProps> = ({
 			<div className="text-center space-y-3 max-w-md">
 				<div className="relative">
 					<h1
-						className={`${currentSize.text} font-bold text-[#1e3a8a] tracking-wider`}
+						className={`${currentSize.text} font-bold text-black tracking-wider`}
 						style={{
 							// color: '#ffffff',
 							letterSpacing: '0.1em',
@@ -139,7 +139,7 @@ const DPSLoading: React.FC<DPSLoadingProps> = ({
 						Government Model College
 					</h1>
 					<div
-						className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-[#1e3a8a] to-transparent"
+						className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-black to-transparent"
 						style={{ 
 							width: '50%',
 							animation: 'expand 2s ease-in-out infinite alternate',
@@ -159,7 +159,7 @@ const DPSLoading: React.FC<DPSLoadingProps> = ({
 					{[0, 1, 2].map((index) => (
 						<div
 							key={index}
-							className="w-2 h-2 rounded-full bg-[#1e3a8a]"
+							className="w-2 h-2 rounded-full bg-black"
 							style={{
 								// background: '#ffffff',
 								animation: `bounce-dot 1.4s ease-in-out ${index * 0.16}s infinite`,
