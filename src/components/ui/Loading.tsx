@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import dpslogo from "../../assets/logo_main.png";
+import dpslogo from "../../assets/logo_main.jpg";
 
 
 type SizeType = 'sm' | 'md' | 'lg';
