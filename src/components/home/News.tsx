@@ -1,182 +1,226 @@
 import React, { useState } from 'react';
-import { ArrowRight, Calendar } from 'lucide-react';
-import img1 from "../../assets/mp1.png";
-import img2 from "../../assets/mp2.png";
-import img3 from "../../assets/mp3.png";
-
-const styles = `
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
-  .news-section  { font-family: 'DM Sans', sans-serif; }
-  .news-display  { font-family: 'Cormorant Garamond', serif; }
-
-  @keyframes tabSlide {
-    from { transform: scaleX(0); }
-    to   { transform: scaleX(1); }
-  }
-  @keyframes cardIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .card-animate { animation: cardIn 0.45s cubic-bezier(0.16,1,0.3,1) backwards; }
-  .tab-underline { animation: tabSlide 0.3s ease forwards; transform-origin: left; }
-`;
+import img1 from "../../assets/mp2.png"
+import img2 from "../../assets/mp3.png"
+import img3 from "../../assets/mp4.png"
 
 interface EventItem {
   id: number;
   title: string;
   date: string;
   image: string;
-  badge?: { text: string };
+  badge?: {
+    text: string;
+    color: string;
+  };
 }
 
 const News = () => {
   const [activeTab, setActiveTab] = useState<'webinars' | 'news' | 'events'>('webinars');
 
   const webinars: EventItem[] = [
-    { id: 1, title: 'Viksit Bharat@2047: Voice of Youth', date: '16 December, 2023', image: img1 },
-    { id: 2, title: 'राष्ट्रीय शिक्षा नीति-2020 और इसके एवं युवा शिक्षा पर भौतिक दृष्टि विशेषज्ञायुक्त के विचार', date: '22 July, 2023', image: img2 },
-    { id: 3, title: 'मध्यप्रदेश भोज (मुक्त) विश्वविद्यालय भोपाल एवं पर्यावरण मंत्रालय के संयुक्त तत्वाधान में', date: '22 November, 2022', image: img3 },
-  ];
-  const news: EventItem[] = [
-    { id: 1, title: 'M.Ed. Spl.Ed. Semi-Contact Class', date: 'Jul 9', badge: { text: 'New' }, image: img1 },
-    { id: 2, title: 'Application form B.Ed. (Special Education-Distance Education) 2023-25', date: 'Jan 12', badge: { text: 'Updated' }, image: img2 },
-    { id: 3, title: 'UGC approved programmes from academic year 2023-24, academic session beginning February, 2024 and onwards to Madhya Pradesh Bhoj (Open) University, Bhopal', date: 'Jan 12', badge: { text: 'New' }, image: img3 },
-  ];
-  const events: EventItem[] = [
-    { id: 1, title: 'Viksit Bharat@2047: Voice of Youth', date: '16 December, 2023', image: img1 },
-    { id: 2, title: 'चार प्रतिभाशाली युवा उर्जा के उपयोग से ही हम देश में ऊर्जा स्वरूप परिवर्तन कर सकते हैं', date: '26 August, 2023', image: img2 },
-    { id: 3, title: 'राष्ट्रीय विज्ञान दिवस पर भोज विश्वविद्यालय में समारोह संपन्न।', date: '26 August, 2023', image: img3 },
+    {
+      id: 1,
+      title: 'Viksit Bharat@2047: Voice of Youth',
+      date: '16 December, 2023',
+      image: img1,
+    },
+    {
+      id: 2,
+      title: 'राष्ट्रीय शिक्षा नीति-2020 और इसके एवं युवा शिक्षा पर भौतिक दृष्टि विशेषज्ञायुक्त के विचार',
+      date: '22 July, 2023',
+      image: img2,
+    },
+    {
+      id: 3,
+      title: 'मध्यप्रदेश भोज (मुक्त) विश्वविद्यालय भोपाल एवं पर्यावरण मंत्रालय के संयुक्त तत्वाधान में',
+      date: '22 November, 2022',
+      image: img3,
+    },
   ];
 
-  const tabData = { webinars, news, events };
-  const tabs = [
-    { key: 'webinars', label: 'Webinars' },
-    { key: 'news',     label: 'News & Updates' },
-    { key: 'events',   label: 'Our Events' },
-  ] as const;
+  const news: EventItem[] = [
+    {
+      id: 1,
+      title: 'M.Ed. Spl.Ed. Semi-Contact Class',
+      date: 'Jul 9',
+      badge: { text: 'New Updated', color: 'bg-red-500' },
+      image: img1,
+    },
+    {
+      id: 2,
+      title: 'Application form B.Ed. (Special Education-Distance Education) 2023-25',
+      date: 'Jan 12',
+      badge: { text: 'New Updated', color: 'bg-red-500' },
+      image: img2,
+    },
+    {
+      id: 3,
+      title: 'UGC approved programmes from academic year 2023-24, academic session beginning February, 2024 and onwards to Madhya Pradesh Bhoj (Open) University, Bhopal',
+      date: 'Jan 12',
+      badge: { text: 'New Updated', color: 'bg-red-500' },
+      image: img3,
+    },
+  ];
+
+  const events: EventItem[] = [
+    {
+      id: 1,
+      title: 'Viksit Bharat@2047: Voice of Youth',
+      date: '16 December, 2023',
+      image: img1,
+    },
+    {
+      id: 2,
+      title: 'चार प्रतिभाशाली युवा उर्जा के उपयोग से ही हम देश में ऊर्जा स्वरूप परिवर्तन कर सकते हैं- डॉ प्रेम...',
+      date: '26 August, 2023',
+      image: img2,
+    },
+    {
+      id: 3,
+      title: 'राष्ट्रीय विज्ञान दिवस पर भोज विश्वविद्यालय में समारोह संपन्न।',
+      date: '26 August, 2023',
+      image: img3,
+    },
+  ];
+
+  const getActiveData = () => {
+    switch (activeTab) {
+      case 'webinars':
+        return webinars;
+      case 'news':
+        return news;
+      case 'events':
+        return events;
+      default:
+        return webinars;
+    }
+  };
 
   return (
-    <>
-      <style>{styles}</style>
-      <div className="news-section max-w-7xl mx-auto px-4 py-20" style={{ background: '#fff' }}>
-
-        {/* Section Header */}
-        <div className="mb-12">
-          <div className="flex items-center gap-4 mb-5">
-            <div className="h-px w-12 bg-black" />
-            <p className="text-xs uppercase tracking-[0.28em] text-gray-400">Latest from the University</p>
-          </div>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <h2 className="news-display text-5xl font-semibold text-black">
-              Stay <span className="italic font-normal">Informed</span>
-            </h2>
-            <button className="text-xs uppercase tracking-widest text-gray-500 hover:text-black transition-colors flex items-center gap-2 pb-1" style={{ borderBottom: '1px solid #ddd' }}>
-              View All <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
+    <div className="max-w-7xl mx-auto px-4 py-12 bg-gradient-to-br from-gray-50 to-white">
+      {/* Tabs Navigation */}
+      <div className="flex flex-wrap gap-4 mb-8 border-b-2 border-gray-200">
+        <button
+          onClick={() => setActiveTab('webinars')}
+          className={`relative pb-4 px-6 font-semibold text-lg transition-all duration-300 ${
+            activeTab === 'webinars'
+              ? 'text-[#1e3a8a]'
+              : 'text-gray-500 hover:text-[#1e3a8a]'
+          }`}
+        >
+          WEBINARS
+          {activeTab === 'webinars' && (
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#B8860B] rounded-t-full"></div>
+          )}
+        </button>
+        <button
+          onClick={() => setActiveTab('news')}
+          className={`relative pb-4 px-6 font-semibold text-lg transition-all duration-300 ${
+            activeTab === 'news'
+              ? 'text-[#1e3a8a]'
+              : 'text-gray-500 hover:text-[#1e3a8a]'
+          }`}
+        >
+          NEWS & UPDATES
+          {activeTab === 'news' && (
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#B8860B] rounded-t-full"></div>
+          )}
+        </button>
+        <button
+          onClick={() => setActiveTab('events')}
+          className={`relative pb-4 px-6 font-semibold text-lg transition-all duration-300 ${
+            activeTab === 'events'
+              ? 'text-[#1e3a8a]'
+              : 'text-gray-500 hover:text-[#1e3a8a]'
+          }`}
+        >
+          OUR EVENTS
+          {activeTab === 'events' && (
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#B8860B] rounded-t-full"></div>
+          )}
+        </button>
+        <div className="ml-auto pb-4 px-6">
+          <button className="text-[#1e3a8a] hover:text-[#1e3a8a] font-semibold text-sm uppercase tracking-wide transition-colors duration-300 flex items-center gap-2">
+            VIEW ALL
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
+      </div>
 
-        {/* Tab Navigation */}
-        <div className="flex gap-0 mb-10" style={{ borderBottom: '1px solid #e5e5e5' }}>
-          {tabs.map(({ key, label }) => (
-            <button
-              key={key}
-              onClick={() => setActiveTab(key)}
-              className="relative pb-4 px-6 text-sm font-medium transition-colors duration-200"
-              style={{ color: activeTab === key ? '#111' : '#999', letterSpacing: '0.04em' }}
-            >
-              <span className="uppercase tracking-wider text-xs">{label}</span>
-              {activeTab === key && (
-                <div className="tab-underline absolute bottom-0 left-0 right-0 h-0.5 bg-black" />
-              )}
-            </button>
-          ))}
-        </div>
-
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {tabData[activeTab].map((item, index) => (
-            <div
-              key={`${activeTab}-${item.id}`}
-              className="card-animate group relative bg-white overflow-hidden rounded-sm cursor-pointer"
-              style={{
-                border: '1px solid #e5e5e5',
-                animationDelay: `${index * 0.07}s`,
-                transition: 'box-shadow 0.3s ease, transform 0.3s ease',
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
-                (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)';
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.boxShadow = 'none';
-                (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-              }}
-            >
-              {/* Top accent */}
-              <div className="absolute top-0 left-0 right-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
-
-              <div className="flex gap-4 p-5">
-                {/* Date badge for news */}
+      {/* Content Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {getActiveData().map((item, index) => (
+          <div
+            key={item.id}
+            className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-purple-200 transform hover:-translate-y-2"
+          >
+            <div className="relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-[#B8860B]"></div>
+              
+              <div className="flex gap-4 p-6">
+                {/* Date Badge */}
                 {activeTab === 'news' && (
-                  <div className="flex-shrink-0 w-14 text-center">
-                    <div className="bg-black text-white rounded-sm p-2">
-                      <div className="text-xs font-medium uppercase">{item.date.split(' ')[0]}</div>
-                      <div className="text-2xl font-bold leading-none mt-0.5">{item.date.split(' ')[1]}</div>
+                  <div className="flex-shrink-0">
+                    <div className="bg-gradient-to-br from-amber-400 to-orange-500 text-white rounded-lg p-3 text-center shadow-lg min-w-[60px]">
+                      <div className="text-xs font-semibold uppercase mb-1">
+                        {item.date.split(' ')[0]}
+                      </div>
+                      <div className="text-2xl font-bold">
+                        {item.date.split(' ')[1]}
+                      </div>
                     </div>
                   </div>
                 )}
 
                 {/* Image */}
-                <div className="flex-shrink-0 overflow-hidden rounded-sm" style={{ width: '80px', height: '80px' }}>
+                <div className="flex-shrink-0">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    style={{ filter: 'grayscale(20%)' }}
+                    className="w-24 h-24 object-cover rounded-lg shadow-md group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-gray-800 group-hover:text-black font-medium text-sm leading-snug mb-2 line-clamp-3 transition-colors duration-200">
+                  <h3 className="text-gray-800 font-semibold text-sm leading-snug mb-2 line-clamp-3 group-hover:text-[#1e3a8a] transition-colors duration-300">
                     {item.title}
                   </h3>
                   {activeTab !== 'news' && (
-                    <p className="text-gray-400 text-xs flex items-center gap-1.5">
-                      <Calendar className="w-3 h-3" />
+                    <p className="text-gray-500 text-xs flex items-center gap-1">
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
                       {item.date}
                     </p>
                   )}
                   {item.badge && (
-                    <span
-                      className="inline-block mt-2 text-white text-xs px-2.5 py-0.5 font-medium"
-                      style={{ background: '#111', letterSpacing: '0.08em' }}
-                    >
+                    <span className={`inline-block mt-2 ${item.badge.color} text-white text-xs px-3 py-1 rounded-full font-semibold shadow-sm`}>
                       {item.badge.text}
                     </span>
                   )}
                 </div>
               </div>
 
-              {/* Bottom bar */}
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-right" />
+              {/* Hover Effect Bottom Bar */}
+              <div className="h-1 bg-[#B8860B] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </div>
-          ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-14">
-          <button
-            className="inline-flex items-center gap-3 text-white text-sm px-10 py-4 font-medium uppercase tracking-widest transition-all duration-300 hover:tracking-[0.2em]"
-            style={{ background: '#111', border: '1px solid #333' }}
-          >
-            View All {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
+          </div>
+        ))}
       </div>
-    </>
+
+      {/* Bottom View All Link */}
+      <div className="text-center mt-10">
+        <button className="inline-flex items-center gap-2 bg-black text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+          View All {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </button>
+      </div>
+    </div>
   );
 };
 

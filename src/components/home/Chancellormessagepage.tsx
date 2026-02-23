@@ -54,11 +54,11 @@ export default function ChancellorMessagePage() {
               </div>
 
               <div className="space-y-3 pt-6 border-t border-gray-100">
-                <a href="mailto:chancellor@BHOJ.ac.in" className="flex items-center space-x-3 text-gray-600 hover:text-[#4a90c8] transition-colors group">
+                <a href="mailto:chancellor@Government Model College.ac.in" className="flex items-center space-x-3 text-gray-600 hover:text-[#4a90c8] transition-colors group">
                   <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-blue-100 transition-colors">
                     <Mail className="w-5 h-5 text-[#4a90c8]" />
                   </div>
-                  <span className="text-sm">chancellor@BHOJ.ac.in</span>
+                  <span className="text-sm">chancellor@Government Model College.ac.in</span>
                 </a>
                 <div className="flex items-center space-x-3 text-gray-600">
                   <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center">

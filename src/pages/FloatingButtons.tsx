@@ -29,7 +29,7 @@ const FloatingButtons = () => {
     {
       icon: MessageSquare,
       label: "Feedback",
-      onClick: () => window.location.href = "mailto:info@mpbou.ac.in",
+      onClick: () => window.location.href = "mailto:info@Government Model College.ac.in",
       color: "from-orange-600 to-orange-800"
     },
     {
@@ -101,7 +101,7 @@ const FloatingButtons = () => {
             </button>
 
             <button
-              onClick={() => window.location.href = "mailto:info@mpbou.ac.in"}
+              onClick={() => window.location.href = "mailto:info@Government Model College.ac.in"}
               className="flex flex-col items-center space-y-1 px-2 py-2 rounded-xl hover:bg-white/10 active:bg-white/20 transition-all duration-300 group"
             >
               <div className="w-10 h-10 sm:w-11 sm:h-11 bg-gradient-to-br from-orange-500 to-orange-700 rounded-full flex items-center justify-center group-hover:scale-110 group-active:scale-95 transition-transform shadow-lg">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const galleryStyles = `
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
@@ -27,8 +27,8 @@ const galleryStyles = `
   .g-thumb:hover .g-caption { opacity: 1; transform: translateY(0); }
 
   .filter-btn { transition: all 0.2s ease; }
-  .filter-btn.active { background: #111; color: #fff; }
-  .filter-btn:not(.active):hover { background: #f0f0f0; }
+  .filter-btn.active { background: #1e3a8a; color: #fff; }
+  .filter-btn:not(.active):hover { background: #f0f7ff; color: #1e3a8a; }
 
   .lightbox-img { animation: scaleIn 0.4s cubic-bezier(0.16,1,0.3,1); }
 `;
@@ -103,23 +103,23 @@ const Gallery: React.FC = () => {
       <div className="gallery-page min-h-screen mt-10 md:mt-36" style={{ background: '#fff' }}>
 
         {/* Hero Header */}
-        <div className="py-20 px-4 text-center" style={{ background: '#111', position: 'relative', overflow: 'hidden' }}>
+        <div className="py-20 px-4 text-center" style={{ background: '#1e3a8a', position: 'relative', overflow: 'hidden' }}>
           {/* Decorative ghost text */}
           <div
             className="gallery-display absolute inset-0 flex items-center justify-center select-none pointer-events-none"
-            style={{ fontSize: '240px', opacity: 0.04, color: '#fff', fontStyle: 'italic', lineHeight: 1, letterSpacing: '-0.04em' }}
+            style={{ fontSize: '240px', opacity: 0.06, color: '#fff', fontStyle: 'italic', lineHeight: 1, letterSpacing: '-0.04em' }}
           >
             Gallery
           </div>
           <div className="relative z-10">
             <div className="flex items-center justify-center gap-4 mb-5">
-              <div className="h-px w-12 bg-gray-600" />
-              <div className="w-2 h-2 rotate-45 bg-gray-500" />
-              <div className="h-px w-12 bg-gray-600" />
+              <div className="h-px w-12" style={{ background: 'rgba(255,255,255,0.4)' }} />
+              <div className="w-2 h-2 rotate-45" style={{ background: 'rgba(255,255,255,0.6)' }} />
+              <div className="h-px w-12" style={{ background: 'rgba(255,255,255,0.4)' }} />
             </div>
-            <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">Visual Archive</p>
+            <p className="text-xs uppercase tracking-[0.3em] mb-4" style={{ color: 'rgba(255,255,255,0.6)' }}>Visual Archive</p>
             <h1 className="gallery-display g-slide text-6xl md:text-7xl font-semibold text-white mb-4">Photo Gallery</h1>
-            <p className="text-gray-400 text-lg font-light max-w-xl mx-auto g-slide" style={{ animationDelay: '0.1s' }}>
+            <p className="text-lg font-light max-w-xl mx-auto g-slide" style={{ color: 'rgba(255,255,255,0.7)', animationDelay: '0.1s' }}>
               Discover the essence of our university through these captivating moments
             </p>
           </div>
@@ -177,7 +177,7 @@ const Gallery: React.FC = () => {
         {selectedImage && (
           <div
             className="g-fade fixed inset-0 z-50 flex items-center justify-center p-4"
-            style={{ background: 'rgba(0,0,0,0.96)' }}
+            style={{ background: 'rgba(10,20,60,0.97)' }}
             onClick={() => setSelectedImage(null)}
           >
             {/* Close */}

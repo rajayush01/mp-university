@@ -146,12 +146,12 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
+  background: black;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-light);
+  background: black;
 }
 
 /* Button styles */

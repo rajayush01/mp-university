@@ -225,7 +225,7 @@ const AdmissionForm = () => {
                 
                 <div className="md:col-span-2">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Is Student belongs to Government Model College <span className="text-red-500">*</span>
+                    Is Student belongs to Bhoj University <span className="text-red-500">*</span>
                   </label>
                   <select
                     name="bhojUniversity"

@@ -25,13 +25,13 @@ const AboutPage: React.FC = () => {
               <h2 className="text-4xl font-bold text-[#1e3a8a] mb-6">Our Legacy</h2>
               <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
                 <p>
-                  <span className="font-bold text-[#1e3a8a]">Madhya Pradesh Bhoj (Open) University (MPBOU)</span>, established on October 1, 1992, under the Madhya Pradesh University Act 1991, was inaugurated by President Dr. Shankar Dayal Sharma on October 19, 1992.
+                  <span className="font-bold text-[#1e3a8a]">Madhya Pradesh Government Model College (Open) University (Government Model College)</span>, established on October 1, 1992, under the Madhya Pradesh University Act 1991, was inaugurated by President Dr. Shankar Dayal Sharma on October 19, 1992.
                 </p>
                 <p>
-                  The university's emblem draws inspiration from a verse in Raja Bhoj's <span className="font-semibold italic">"Saraswati Kanthabharan"</span>, reflecting our deep connection to India's rich intellectual heritage and commitment to the pursuit of knowledge.
+                  The university's emblem draws inspiration from a verse in Raja Government Model College's <span className="font-semibold italic">"Saraswati Kanthabharan"</span>, reflecting our deep connection to India's rich intellectual heritage and commitment to the pursuit of knowledge.
                 </p>
                 <p>
-                  Located in Bhopal, MPBOU is a premier <span className="font-semibold">UGC-recognized State Open University</span> established in 1991, with a vision centered on extending education to underserved regions through the Open and Distance Learning System.
+                  Located in Bhopal, Government Model College is a premier <span className="font-semibold">UGC-recognized State Open University</span> established in 1991, with a vision centered on extending education to underserved regions through the Open and Distance Learning System.
                 </p>
               </div>
 
@@ -236,11 +236,11 @@ const AboutPage: React.FC = () => {
                 <div className="bg-gradient-to-r from-[#B8860B]/10 to-transparent p-6 rounded-lg border-l-4 border-[#B8860B]">
                   <p className="font-semibold text-[#1e3a8a] mb-2">Ambitious Growth Target</p>
                   <p>
-                    Established ODL institutions like MPBOU can offer qualitative courses, potentially increasing registered ODL students from <span className="font-bold">4.3 million to 10 million</span>, aiming for a <span className="font-bold text-[#B8860B]">50% Gross Enrollment Ratio (GER) by 2035</span>.
+                    Established ODL institutions like Government Model College can offer qualitative courses, potentially increasing registered ODL students from <span className="font-bold">4.3 million to 10 million</span>, aiming for a <span className="font-bold text-[#B8860B]">50% Gross Enrollment Ratio (GER) by 2035</span>.
                   </p>
                 </div>
                 <p>
-                  Open and Distance Learning Institutions, including MPBOU, are well-positioned to meet these demands cost-effectively, contributing to the core objective of expanding access to quality education for all.
+                  Open and Distance Learning Institutions, including Government Model College, are well-positioned to meet these demands cost-effectively, contributing to the core objective of expanding access to quality education for all.
                 </p>
               </div>
             </div>

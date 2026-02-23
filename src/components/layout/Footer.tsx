@@ -1,10 +1,10 @@
 import React from 'react';
 import {  MapPin, Phone, Mail, Facebook, Twitter, Instagram } from 'lucide-react';
-import logo from '../../assets/logo_bhoj.png'
+import logo from '../../assets/logo_main.jpg'
 
 export default function Footer() {
   const quickLinks1 = [
-    { name: 'BHOJ Online Knowledge Portal', href: '#' },
+    { name: 'Government Model College Online Knowledge Portal', href: '#' },
     { name: 'Indian Nursing Council', href: '#' },
     { name: 'Department Of Ayush, GoI', href: '#' },
     { name: 'Anti Ragging', href: '#' },
@@ -99,7 +99,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="w-5 h-5" />
-                <span>BHOJuniversitybpl@gmail.com</span>
+                <span>Government Model Collegeuniversitybpl@gmail.com</span>
               </li>
             </ul>
           </div>

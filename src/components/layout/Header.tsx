@@ -55,14 +55,14 @@ const globalStyles = `
   .mobile-animate   { animation: mobileIn 0.3s cubic-bezier(0.16,1,0.3,1) forwards; }
 
   .shimmer-btn {
-    background: linear-gradient(90deg, #111 40%, #444 50%, #111 60%);
+    background: linear-gradient(90deg, #1e3a8a 40%, #3b5fb5 50%, #1e3a8a 60%);
     background-size: 200% auto;
   }
   .shimmer-btn:hover { animation: shimmer 1.2s linear infinite; }
 
-  .search-input:focus { box-shadow: 0 0 0 2px #555; }
+  .search-input:focus { box-shadow: 0 0 0 2px rgba(74,144,200,0.5); }
 
-  .scroll-shadow { box-shadow: 0 4px 24px rgba(0,0,0,0.18); }
+  .scroll-shadow { box-shadow: 0 4px 24px rgba(30,58,138,0.18); }
 
   /* staggered dropdown items */
   .drop-item { opacity: 0; transform: translateX(-6px); transition: opacity 0.18s ease, transform 0.18s ease, background 0.15s; }
@@ -105,17 +105,17 @@ const navLinks: NavLink[] = [
   {
     label: 'Examinations', hasDropdown: true, icon: <FileText className="w-3.5 h-3.5" />,
     dropdownItems: [
-      { label: 'Exam Schedule',  href: '/examinations/schedule',   icon: <FileText className="w-3.5 h-3.5" /> },
-      { label: 'Results',        href: '/examinations/results',    icon: <Award className="w-3.5 h-3.5" /> },
-      { label: 'Exam Guidelines',href: '/examinations/guidelines', icon: <BookOpen className="w-3.5 h-3.5" /> },
+      { label: 'Exam Schedule',   href: '/examinations/schedule',   icon: <FileText className="w-3.5 h-3.5" /> },
+      { label: 'Results',         href: '/examinations/results',    icon: <Award className="w-3.5 h-3.5" /> },
+      { label: 'Exam Guidelines', href: '/examinations/guidelines', icon: <BookOpen className="w-3.5 h-3.5" /> },
     ],
   },
   {
     label: 'R&D Activities', hasDropdown: true, icon: <FlaskConical className="w-3.5 h-3.5" />,
     dropdownItems: [
-      { label: 'Research Projects', href: '/research/projects',    icon: <Microscope className="w-3.5 h-3.5" /> },
+      { label: 'Research Projects', href: '/research/projects',     icon: <Microscope className="w-3.5 h-3.5" /> },
       { label: 'Publications',      href: '/research/publications', icon: <BookOpen className="w-3.5 h-3.5" /> },
-      { label: 'Innovation',        href: '/research/innovation',  icon: <FlaskConical className="w-3.5 h-3.5" /> },
+      { label: 'Innovation',        href: '/research/innovation',   icon: <FlaskConical className="w-3.5 h-3.5" /> },
     ],
   },
   {
@@ -129,10 +129,10 @@ const navLinks: NavLink[] = [
   {
     label: 'Admissions', hasDropdown: true, icon: <Award className="w-3.5 h-3.5" />,
     dropdownItems: [
-      { label: 'Admission Form',    href: '/admission-form',       icon: <FileText className="w-3.5 h-3.5" /> },
-      { label: 'Admission Process', href: '/admission/process',    icon: <ChevronRight className="w-3.5 h-3.5" /> },
-      { label: 'Eligibility',       href: '/admission/eligibility',icon: <Award className="w-3.5 h-3.5" /> },
-      { label: 'Fee Structure',     href: '/admission/fees',       icon: <FileText className="w-3.5 h-3.5" /> },
+      { label: 'Admission Form',    href: '/admission-form',        icon: <FileText className="w-3.5 h-3.5" /> },
+      { label: 'Admission Process', href: '/admission/process',     icon: <ChevronRight className="w-3.5 h-3.5" /> },
+      { label: 'Eligibility',       href: '/admission/eligibility', icon: <Award className="w-3.5 h-3.5" /> },
+      { label: 'Fee Structure',     href: '/admission/fees',        icon: <FileText className="w-3.5 h-3.5" /> },
     ],
   },
   { label: 'Careers',    href: '/careers',    icon: <Briefcase className="w-3.5 h-3.5" /> },
@@ -177,19 +177,17 @@ export default function Header() {
       >
 
         {/* ── Utility Bar ── */}
-        <div style={{ background: '#111', borderBottom: '1px solid #2a2a2a' }}>
+        <div style={{ background: '#1e3a8a', borderBottom: '1px solid rgba(255,255,255,0.12)' }}>
           <div className="max-w-full mx-auto px-4 lg:px-16">
             <div className="flex justify-between items-center h-10 text-xs">
 
               {/* Accessibility */}
               <div className="flex items-center gap-4">
-                <button
-                  className="text-gray-400 hover:text-white transition-colors duration-200 border-r border-gray-700 pr-4 whitespace-nowrap flex items-center gap-1.5"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-gray-400 inline-block" style={{ animation: 'pulse-dot 2s ease-in-out infinite' }} />
+                <button className="text-blue-200 hover:text-white transition-colors duration-200 border-r border-blue-700 pr-4 whitespace-nowrap flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-300 inline-block" style={{ animation: 'pulse-dot 2s ease-in-out infinite' }} />
                   Screen Reader Access
                 </button>
-                <button className="text-gray-400 hover:text-white transition-colors duration-200 whitespace-nowrap">
+                <button className="text-blue-200 hover:text-white transition-colors duration-200 whitespace-nowrap">
                   Skip To Main Content
                 </button>
               </div>
@@ -205,10 +203,10 @@ export default function Header() {
                     onFocus={() => setSearchFocused(true)}
                     onBlur={() => setSearchFocused(false)}
                     className="search-input w-full px-4 py-1.5 pr-10 rounded-sm text-white text-xs focus:outline-none transition-all duration-200"
-                    style={{ background: '#1e1e1e', border: '1px solid #333' }}
+                    style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)' }}
                   />
-                  <button className="absolute right-0 top-0 bottom-0 px-3 hover:bg-gray-700 rounded-r-sm transition-colors">
-                    <Search className="w-3.5 h-3.5 text-gray-400" />
+                  <button className="absolute right-0 top-0 bottom-0 px-3 hover:bg-blue-700 rounded-r-sm transition-colors">
+                    <Search className="w-3.5 h-3.5 text-blue-200" />
                   </button>
                 </div>
               </div>
@@ -216,12 +214,12 @@ export default function Header() {
               {/* Right Controls */}
               <div className="flex items-center gap-2">
                 <select
-                  className="text-gray-300 text-xs px-2 py-1 focus:outline-none border-r border-gray-700 pr-3 cursor-pointer hover:text-white transition-colors"
+                  className="text-blue-100 text-xs px-2 py-1 focus:outline-none border-r border-blue-700 pr-3 cursor-pointer hover:text-white transition-colors"
                   style={{ background: 'transparent' }}
                 >
-                  <option style={{ background: '#111' }}>Lang</option>
-                  <option style={{ background: '#111' }}>English</option>
-                  <option style={{ background: '#111' }}>हिंदी</option>
+                  <option style={{ background: '#1e3a8a' }}>Lang</option>
+                  <option style={{ background: '#1e3a8a' }}>English</option>
+                  <option style={{ background: '#1e3a8a' }}>हिंदी</option>
                 </select>
                 {[
                   { label: '+A', action: () => setFontSize(p => Math.min(p + 2, 24)), title: 'Increase font size' },
@@ -232,7 +230,7 @@ export default function Header() {
                     key={label}
                     onClick={action}
                     title={title}
-                    className="text-gray-400 hover:text-white hover:bg-gray-800 px-2 py-0.5 rounded transition-all duration-150 text-xs border border-transparent hover:border-gray-600"
+                    className="text-blue-200 hover:text-white hover:bg-blue-700 px-2 py-0.5 rounded transition-all duration-150 text-xs border border-transparent hover:border-blue-500"
                   >
                     {label}
                   </button>
@@ -243,23 +241,19 @@ export default function Header() {
         </div>
 
         {/* ── Branding Bar ── */}
-        <div style={{ background: '#fff', borderBottom: '1px solid #e5e5e5' }}>
+        <div style={{ background: '#fff', borderBottom: '2px solid #1e3a8a' }}>
           <div className="max-w-full mx-auto px-4 lg:px-16">
             <div className="flex justify-between items-center py-3">
 
               {/* Logo + Name */}
               <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-4 group">
-                {/* Placeholder logo circle */}
-                <div
-                  className="flex-shrink-0 w-24 h-24 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
-                >
+                <div className="flex-shrink-0 w-24 h-24 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                   <img src={logo} alt="Logo" className="h-24 w-24 object-contain" />
                 </div>
                 <div className="hidden lg:block">
-                  {/* <p className="text-sm text-gray-500 tracking-wider uppercase font-medium">Higher Education Department</p> */}
                   <h1
-                    className="text-2xl font-semibold text-black leading-tight"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    className="text-2xl font-semibold leading-tight"
+                    style={{ fontFamily: "'Playfair Display', serif", color: '#1e3a8a' }}
                   >
                     उच्च शिक्षा विभाग
                   </h1>
@@ -271,14 +265,13 @@ export default function Header() {
               <div className="hidden lg:flex items-center gap-3">
                 <button
                   className="shimmer-btn text-white text-sm px-5 py-2 rounded-full font-medium tracking-wide transition-all duration-200 hover:shadow-lg"
-                  style={{ background: '#222', border: '1px solid #444' }}
+                  style={{ background: '#1e3a8a', border: '1px solid #2d4fae' }}
                 >
                   सीएमएस लॉगिन
                 </button>
                 <Link to="/contact">
                   <button
-                    className="text-sm px-5 py-2 rounded-full font-medium tracking-wide transition-all duration-200 hover:bg-gray-900 hover:text-white"
-                    style={{ background: '#fff', color: '#111', border: '2px solid #111' }}
+                    className="text-sm px-5 py-2 rounded-full font-medium border border-blue-900 hover:bg-[#1e3a8a] hover:text-white"
                   >
                     Contact Us
                   </button>
@@ -288,13 +281,13 @@ export default function Header() {
               {/* Mobile Toggle */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 rounded-sm transition-all duration-200 hover:bg-gray-100"
-                style={{ border: '1px solid #ddd' }}
+                className="lg:hidden p-2 rounded-sm transition-all duration-200 hover:bg-blue-50"
+                style={{ border: '1px solid #dbe8ff' }}
                 aria-label="Toggle menu"
               >
                 {isMobileMenuOpen
-                  ? <X className="w-5 h-5 text-black" />
-                  : <Menu className="w-5 h-5 text-black" />
+                  ? <X className="w-5 h-5" style={{ color: '#1e3a8a' }} />
+                  : <Menu className="w-5 h-5" style={{ color: '#1e3a8a' }} />
                 }
               </button>
             </div>
@@ -302,7 +295,7 @@ export default function Header() {
         </div>
 
         {/* ── Navigation Bar ── */}
-        <div style={{ background: '#111', borderBottom: '1px solid #222' }}>
+        <div style={{ background: '#1e3a8a', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
           <div className="max-w-full mx-auto px-4 lg:px-16">
             <div className="hidden lg:flex items-center">
               {navLinks.map((link, i) => (
@@ -316,7 +309,7 @@ export default function Header() {
                   {link.hasDropdown ? (
                     <>
                       <button
-                        className="nav-link-underline text-gray-300 hover:text-white px-3 xl:px-4 py-4 font-medium transition-all duration-200 flex items-center gap-1.5 text-xs uppercase tracking-wider whitespace-nowrap"
+                        className="nav-link-underline text-blue-100 hover:text-white px-3 xl:px-4 py-4 font-medium transition-all duration-200 flex items-center gap-1.5 text-xs uppercase tracking-wider whitespace-nowrap"
                         style={{ letterSpacing: '0.08em' }}
                       >
                         {link.icon && <span className="opacity-70">{link.icon}</span>}
@@ -337,18 +330,21 @@ export default function Header() {
                             className="py-2 mt-0"
                             style={{
                               background: '#fff',
-                              border: '1px solid #e0e0e0',
-                              borderTop: '3px solid #111',
-                              boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
+                              border: '1px solid #dbe8ff',
+                              borderTop: '3px solid #1e3a8a',
+                              boxShadow: '0 8px 32px rgba(30,58,138,0.15)',
                             }}
                           >
                             {link.dropdownItems?.map((item) => (
                               <Link
                                 key={item.label}
                                 to={item.href}
-                                className="drop-item flex items-center gap-2.5 px-4 py-2.5 text-gray-600 hover:text-black hover:bg-gray-50 text-sm transition-colors"
+                                className="drop-item flex items-center gap-2.5 px-4 py-2.5 text-gray-600 hover:text-white text-sm transition-colors"
+                                style={{}}
+                                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#1e3a8a'; (e.currentTarget as HTMLElement).style.color = '#fff'; }}
+                                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = ''; (e.currentTarget as HTMLElement).style.color = ''; }}
                               >
-                                <span className="text-gray-400">{item.icon}</span>
+                                <span className="text-blue-400">{item.icon}</span>
                                 {item.label}
                               </Link>
                             ))}
@@ -359,7 +355,7 @@ export default function Header() {
                   ) : (
                     <Link
                       to={link.href || '#'}
-                      className="nav-link-underline text-gray-300 hover:text-white px-3 xl:px-4 py-4 font-medium transition-all duration-200 flex items-center gap-1.5 text-xs uppercase tracking-wider whitespace-nowrap"
+                      className="nav-link-underline text-blue-100 hover:text-white px-3 xl:px-4 py-4 font-medium transition-all duration-200 flex items-center gap-1.5 text-xs uppercase tracking-wider whitespace-nowrap"
                     >
                       {link.icon && <span className="opacity-70">{link.icon}</span>}
                       <span>{link.label}</span>
@@ -377,13 +373,13 @@ export default function Header() {
             className="lg:hidden mobile-animate overflow-y-auto"
             style={{
               background: '#fff',
-              borderTop: '3px solid #111',
+              borderTop: '3px solid #1e3a8a',
               maxHeight: 'calc(100vh - 10rem)',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
+              boxShadow: '0 8px 32px rgba(30,58,138,0.15)',
             }}
           >
             {/* Mobile Search */}
-            <div className="px-4 py-3" style={{ borderBottom: '1px solid #eee' }}>
+            <div className="px-4 py-3" style={{ borderBottom: '1px solid #eef2ff' }}>
               <div className="relative">
                 <input
                   type="text"
@@ -391,21 +387,23 @@ export default function Header() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full px-4 py-2 pr-10 text-sm focus:outline-none"
-                  style={{ border: '1px solid #ddd', background: '#fafafa' }}
+                  style={{ border: '1px solid #dbe8ff', background: '#f8faff' }}
                 />
-                <button className="absolute right-0 top-0 bottom-0 px-3 hover:bg-gray-100 transition-colors">
-                  <Search className="w-4 h-4 text-gray-500" />
+                <button className="absolute right-0 top-0 bottom-0 px-3 hover:bg-blue-50 transition-colors">
+                  <Search className="w-4 h-4" style={{ color: '#1e3a8a' }} />
                 </button>
               </div>
             </div>
 
             {/* Mobile Action Buttons */}
-            <div className="px-4 py-3 grid grid-cols-2 gap-2" style={{ borderBottom: '1px solid #eee', background: '#fafafa' }}>
+            <div className="px-4 py-3 grid grid-cols-2 gap-2" style={{ borderBottom: '1px solid #eef2ff', background: '#f8faff' }}>
               {['Results', 'UGC DEB', 'Online Admission', 'AICTE'].map(label => (
                 <button
                   key={label}
-                  className="py-2 text-sm font-medium tracking-wide transition-all duration-200 hover:bg-black hover:text-white"
-                  style={{ border: '1px solid #333', color: '#111', background: '#fff' }}
+                  className="py-2 text-sm font-medium tracking-wide transition-all duration-200"
+                  style={{ border: '1px solid #1e3a8a', color: '#1e3a8a', background: '#fff' }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#1e3a8a'; (e.currentTarget as HTMLElement).style.color = '#fff'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = '#fff'; (e.currentTarget as HTMLElement).style.color = '#1e3a8a'; }}
                 >
                   {label}
                 </button>
@@ -420,15 +418,18 @@ export default function Header() {
                     <div>
                       <button
                         onClick={() => setActiveDropdown(activeDropdown === link.label ? null : link.label)}
-                        className="w-full flex items-center justify-between py-3 px-3 text-gray-700 hover:text-black hover:bg-gray-50 font-medium transition-all duration-150 rounded-sm"
+                        className="w-full flex items-center justify-between py-3 px-3 font-medium transition-all duration-150 rounded-sm"
+                        style={{ color: '#1e3a8a' }}
+                        onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#f0f7ff'}
+                        onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = ''}
                       >
                         <span className="flex items-center gap-2">
-                          <span className="text-gray-400">{link.icon}</span>
+                          <span style={{ color: '#4a90c8' }}>{link.icon}</span>
                           <span className="text-sm tracking-wide">{link.label}</span>
                         </span>
                         <ChevronDown
-                          className="w-4 h-4 text-gray-400 transition-transform duration-200"
-                          style={{ transform: activeDropdown === link.label ? 'rotate(180deg)' : 'rotate(0)' }}
+                          className="w-4 h-4 transition-transform duration-200"
+                          style={{ color: '#4a90c8', transform: activeDropdown === link.label ? 'rotate(180deg)' : 'rotate(0)' }}
                         />
                       </button>
 
@@ -439,9 +440,12 @@ export default function Header() {
                               key={item.label}
                               to={item.href}
                               onClick={() => setIsMobileMenuOpen(false)}
-                              className="flex items-center gap-2 py-2 px-3 text-sm text-gray-500 hover:text-black hover:bg-gray-50 transition-colors rounded-sm"
+                              className="flex items-center gap-2 py-2 px-3 text-sm transition-colors rounded-sm"
+                              style={{ color: '#4a6fd4' }}
+                              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#f0f7ff'; (e.currentTarget as HTMLElement).style.color = '#1e3a8a'; }}
+                              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = ''; (e.currentTarget as HTMLElement).style.color = '#4a6fd4'; }}
                             >
-                              <span className="text-gray-300">{item.icon}</span>
+                              <span style={{ color: '#93b8e8' }}>{item.icon}</span>
                               {item.label}
                             </Link>
                           ))}
@@ -452,9 +456,12 @@ export default function Header() {
                     <Link
                       to={link.href || '#'}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="flex items-center gap-2 py-3 px-3 text-sm text-gray-700 hover:text-black hover:bg-gray-50 font-medium transition-all duration-150 rounded-sm"
+                      className="flex items-center gap-2 py-3 px-3 text-sm font-medium transition-all duration-150 rounded-sm"
+                      style={{ color: '#1e3a8a' }}
+                      onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#f0f7ff'}
+                      onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = ''}
                     >
-                      <span className="text-gray-400">{link.icon}</span>
+                      <span style={{ color: '#4a90c8' }}>{link.icon}</span>
                       {link.label}
                     </Link>
                   )}

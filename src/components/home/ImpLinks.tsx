@@ -14,7 +14,7 @@ const [hoveredId, setHoveredId] = useState<string | null>(null);
       id: 'bhojdarshan',
       image: img1,
       title: 'Bhojdarshan',
-      subtitle: 'An Internet Video Of MPBOU',
+      subtitle: 'An Internet Video Of Government Model College',
     },
     {
       id: 'facebook',
@@ -32,7 +32,7 @@ const [hoveredId, setHoveredId] = useState<string | null>(null);
       id: 'bhojvani',
       image: img4,
       title: 'Bhojvani',
-      subtitle: 'An Internet Radio Of MPBOU',
+      subtitle: 'An Internet Radio Of Government Model College',
     },
     {
       id: 'bhopal',

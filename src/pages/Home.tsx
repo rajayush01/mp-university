@@ -16,10 +16,10 @@ const Home = () => {
     <div className="antialiased bg-white">
       <HeroSection />
       <About/>
-      <div className='flex flex-col px-10 gap-10'>
+      {/* <div className='flex flex-col px-10 gap-10'>
         <ChancellorNoticesSection/>
         <ViceChancellorNoticesSection/>
-      </div>
+      </div> */}
       <StatsSection />
       <EventsSection />
 
